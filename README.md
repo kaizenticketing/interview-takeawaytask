@@ -8,7 +8,7 @@ The real codebase DOES NOT look like and is NOT laid out like this!
 
 1. Clone the code. Build and run/debug to get a feel for it. It is a VERY cut down section of the customer's "My Account" section with a lot of things 'faked'.
 
-2. Read the "brief" issue - and ask questions via the issue comments of the business sponsor (Kieran). Drop Kieran an email when you are ready for those to be reviewed and to allow a second round of questions if necessary.
+2. Read the "Friends & Family" issue (see [issues](https://github.com/kaizenticketing/interview-takeawaytask/issues)) - and ask questions via the issue comments of the business sponsor (Kieran). Drop Kieran an email when you are ready for those to be reviewed and to allow a second round of questions if necessary.
 
 3. Try breaking down the briefing (with the added context of comments and responses) into work TASKS - a bulleted list of things that you think will need changing in the code to support the new feature. If you can, be specific based on the source code provided, if not keep it high level as to what you think might need to be done.
 
