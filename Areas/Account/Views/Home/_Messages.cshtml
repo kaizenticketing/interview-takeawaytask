@@ -1,0 +1,30 @@
+﻿@model Ticketing.Apps.Channels.Areas.Account.Models.Home.AccountModel
+@using Ticketing.Apps.Channels.Areas.Account.Models
+@using Ticketing.Apps.Channels.Areas.Account.Models.Home
+
+@if (Model.Message != null)
+{
+    <br/>
+
+	<div class="alert alert-success">
+		@* TODO: remove url fragment *@
+		<a class="close" role="button" data-dismiss="alert">&times;</a> 
+
+		@switch (Model.Message)
+		{
+			case AccountMessage.ActivationSuccessful:
+				<text><strong>Success!</strong> Your account has been activated.</text> break;
+
+			case AccountMessage.UpdateSuccessful:
+			    <text><strong>Success!</strong> Your account has been updated.</text> break;
+
+			case AccountMessage.PasswordChanged:
+			    <text><strong>Success!</strong> Your password has been reset.</text> break;
+
+			case AccountMessage.ForgottenPasswordSent:
+			    <text><strong>Success!</strong> An email has been sent to allow the customer to change their password.</text> break;
+
+			default: throw new NotSupportedException("Account success message not supported");
+		}
+	</div>
+}

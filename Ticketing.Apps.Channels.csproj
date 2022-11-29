@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <IsPackable>true</IsPackable>
+	  <Nullable>disable</Nullable>
+	  <NoWarn>IDE0063;IDE0042;NU1608;</NoWarn>
+    <Title>Ticketing.Apps.Channels</Title>
+    <Description>Allow the ticketing system to expose commerce channels to be interacted with by customers/users.</Description>
+    <PackageId>Ticketing.Apps.Channels</PackageId>
+	  <Authors>Kaizen Ticketing Solutions LTD</Authors>
+    <Company>Kaizen Ticketing Solutions LTD</Company>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+	  <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+	  <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+	  <AnalysisMode>Recommended</AnalysisMode> <!-- -> "Recommended" to be more thorough but eats CPU otherwise "Default" -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.Proxy" Version="4.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="6.0.10" />
+    <PackageReference Include="IdentityModel" Version="5.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.10" />
+	  <PackageReference Include="Schema.NET.Pending" Version="11.0.1" />
+    <PackageReference Include="MessagePack.NodaTime" Version="3.0.0" />
+    <PackageReference Include="Autofac" Version="6.4.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="MessagePack" Version="2.4.35" />
+    <PackageReference Include="morelinq" Version="3.3.2" />
+  </ItemGroup>
+</Project>

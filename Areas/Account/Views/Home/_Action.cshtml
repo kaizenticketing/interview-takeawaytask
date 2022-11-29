@@ -1,0 +1,9 @@
+﻿@using Ticketing.Apps.Channels.Areas.Account.Models.Home
+@model Ticketing.Apps.Channels.Areas.Account.Models.Home.AccountActionModel
+
+@* >= MD markup as card with buttons *@
+<div class="d-none d-md-block  card card-body card-dark text-center mt-3">
+	<h3 class="pt-4">@Model.NameKey</h3>
+	<a href="@Model.LinkUrl" class="btn btn-secondary btn-lg">@Model.LinkTextKey</a>
+</div>
+
