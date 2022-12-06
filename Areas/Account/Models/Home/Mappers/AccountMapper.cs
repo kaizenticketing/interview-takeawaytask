@@ -15,10 +15,22 @@ public class AccountMapper // M -> VM
 		this.channelContextAccessor = channelContextAccessor;
 	}
 
+	public async ValueTask<List<AccountModel>> MapListAsync(List<Customer> customers)
+	{
+		var result = new List<AccountModel>();
+
+		foreach (var customer in customers)
+		{
+			result.Add(await MapAsync(customer));
+		}
+
+		return result;
+	}
+
 	public async ValueTask<AccountModel> MapAsync(Customer s)
 	{
 		await ValueTask.CompletedTask;
-		
+
 		if (channelContextAccessor.ChannelContext == null)
 			throw new InvalidOperationException("Channel context is required");
 

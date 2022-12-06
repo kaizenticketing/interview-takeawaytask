@@ -22,6 +22,13 @@ public class PurchasingCustomerContextAccessor : IPurchasingCustomerContextAcces
         return await accountService.GetByIdAsync(Uuid.Demo(IdClasses.Account, 1));
     }
 
+    public async ValueTask<List<ICustomerContext>> GetManagedCustomersContextAsync()
+    {
+        var customers = await accountService.GetManagedCustomersAsync();
+
+        return customers.Cast<ICustomerContext>().ToList();
+    }
+
     public void ApplyContext(ICustomerContext? context)
     {
         throw new NotSupportedException();
