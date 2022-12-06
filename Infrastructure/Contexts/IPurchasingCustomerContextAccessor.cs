@@ -8,5 +8,7 @@ public interface IPurchasingCustomerContextAccessor
 {
 	ValueTask<ICustomerContext> GetPurchasingCustomerContextAsync();
 
+	ValueTask<List<ICustomerContext>> GetManagedCustomersContextAsync();
+
 	void ApplyContext(ICustomerContext? context);
 }

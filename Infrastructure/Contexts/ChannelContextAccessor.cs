@@ -42,6 +42,10 @@ public class ChannelContextAccessor : IChannelContextAccessor
                         OrderHistory = new ChannelFlags.MyAccountFlags.OrderHistoryFlags()
                         {
                             IsEnabled = true
+                        },
+                        FriendsAndFamily = new ChannelFlags.MyAccountFlags.FriendsAndFamilyFlags()
+                        {
+                            IsEnabled = true
                         }
                     }
                 }

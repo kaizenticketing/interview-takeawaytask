@@ -181,7 +181,6 @@ public class ChannelFlags
 
 		//
 
-
 		[MessagePackObject]
 		public class OrderHistoryFlags
 		{
@@ -320,7 +319,17 @@ public class ChannelFlags
 
 		[Key(10)]
 		public ActivityLogFlags ActivityLog { get; set; } = new();
-	}
+
+        [MessagePackObject]
+        public class FriendsAndFamilyFlags
+        {
+            [Key(0)]
+            public bool IsEnabled { get; set; }
+        }
+
+		[Key(11)]
+		public FriendsAndFamilyFlags FriendsAndFamily { get; set; } = new();
+    }
 
 	[Key(12)]
 	public MyAccountFlags MyAccount { get; set; } = new();

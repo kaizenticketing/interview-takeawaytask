@@ -36,12 +36,26 @@ public class HomeController : Controller
 		if (channelContextAccessor.ChannelContext == null || channelContextAccessor.ChannelContext.Channel.RequiresUser)
 			return RedirectToAction("SelectedCustomer", new { message });
 
-		var customer = (Customer)(await purchasingCustomerContextAccessor.GetPurchasingCustomerContextAsync());
+		var test = await purchasingCustomerContextAccessor.GetPurchasingCustomerContextAsync();
+		var customer = (Customer)(test);
 
 		// map the purchasing customer
 		var model = await accountMapper.MapAsync(customer);
 		model.Message = (AccountMessage?)message;
 		model.AvailableActions = GetAvailableActions(customer); // decide which actions are applicable - generates urls
+
+		return View(model);
+	}
+
+	[Route("account/friendsandfamily")]
+	public async Task<ActionResult> FriendsAndFamily()
+	{
+		var customerContexts = await purchasingCustomerContextAccessor.GetManagedCustomersContextAsync();
+		var customers = customerContexts.Cast<Customer>().ToList();
+		var model = new FriendsAndFamilyModel
+		{
+			AccountModels = await accountMapper.MapListAsync(customers)
+		};
 
 		return View(model);
 	}
@@ -90,6 +104,9 @@ public class HomeController : Controller
 
 		if (flags.TravelHistory.IsEnabled)
 			actions.Add(new AccountActionModel("map-signs", "travelhistory", "travelhistory", "travelhistory", Url.Action("Index", "TravelHistory", new { area = "Account" })));
+
+		if (flags.FriendsAndFamily.IsEnabled)
+			actions.Add(new AccountActionModel("icon", "friendsandfamily", "f&f", "Friends & family", Url.Action("Index", "FriendsAndFamily", new { area = "Account" })));
 
 		return actions;
 	}
